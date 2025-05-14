@@ -1,0 +1,31 @@
+<div class="container">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <div class="col-md-3 mb-2 mb-md-0">
+      <img
+        class="col-4"
+        src="https://images.squarespace-cdn.com/content/v1/5e6ef85c216efa61c69fab83/42992c12-eb87-4ea8-aa1e-9dadf7dbc1a7/CareMonitor-COL.png?format=1500w"
+      />
+    </div>
+    <div class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+     CareMonitor </div>
+    <div class="col-md-3 text-end">
+      <button
+        *ngIf="!isLoggedIn"
+        type="button"
+        class="btn btn-outline-primary me-2"
+      >
+        Login
+      </button>
+      <button
+        *ngIf="isLoggedIn"
+        type="button"
+        class="btn btn-outline-primary me-2"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </div>
+  </header>
+</div>

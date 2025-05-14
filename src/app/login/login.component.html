@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background: #eee;
+  "
+>
+  <main class="form-signin w-80 m-auto py-3 mb-4 border-bottom">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+        <div class="text-center">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5e6ef85c216efa61c69fab83/42992c12-eb87-4ea8-aa1e-9dadf7dbc1a7/CareMonitor-COL.png?format=1500w"
+            alt="Logo"
+            width="72"
+            height="57"
+            class="mb-4"
+          />
+          <h1 class="h3 mb-3 fw-normal">Login</h1>
+        </div>
+      
+        <mat-form-field appearance="outline" class="w-100 my-3">
+          <mat-label>Email address</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="name@example.com" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline" class="w-100 my-3">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      
+        <button mat-raised-button color="primary" class="w-100" type="submit" [disabled]="loginForm.invalid">
+          Sign In
+        </button>
+      </form>
+      
+  </main>
+</div>

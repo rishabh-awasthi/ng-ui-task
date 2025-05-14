@@ -1,0 +1,19 @@
+<!-- <app-header></app-header> -->
+<div class="container mt-3 mb-8">
+    <h4>User List</h4>
+  <span> Total users = {{users.length}}</span>
+    <div class="card mb-8" *ngFor="let user of users; trackBy: trackById" >
+      <div class="card-body d-flex align-items-center">
+        <img [src]="user.avatar" class="rounded-circle me-3" width="60" height="60" />
+        <div>
+          <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+          <p class="mb-0">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="loading" class="text-center my-4">
+        <p>Loading more users...</p>
+      </div>
+  </div>
+  
